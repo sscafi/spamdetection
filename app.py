@@ -26,6 +26,19 @@ Classifier.fit(vectorize_text, train_data.v1)
 # Define route for the web application
 @app.route('/', methods=['GET'])
 def index():
+    """
+    Endpoint to predict the class label and probabilities for a given message.
+    
+    Parameters:
+    - message: The text message to classify (query parameter).
+    
+    Returns:
+    JSON response containing:
+    - message: The input message.
+    - predict_proba: List of probabilities for each class label.
+    - predict: Predicted class label for the input message.
+    - error: Error message if any exception occurs during prediction.
+    """
     message = request.args.get('message', '')  # Get 'message' parameter from request URL
     error = ''
     predict_proba = ''
