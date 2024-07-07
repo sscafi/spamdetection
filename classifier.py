@@ -34,6 +34,15 @@ def perform(classifiers, vectorizers, train_data, test_data):
     """
     for classifier in classifiers:
         for vectorizer in vectorizers:
+            """
+            Perform training and evaluation of classifiers with different vectorizers.
+
+            Parameters:
+            - classifiers: List of classifier instances to evaluate.
+            - vectorizers: List of vectorizer instances to evaluate.
+            - train_data: DataFrame containing training data.
+            - test_data: DataFrame containing test data.
+            """
             string = ''
             string += classifier.__class__.__name__ + ' with ' + vectorizer.__class__.__name__
 
